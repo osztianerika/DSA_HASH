@@ -48,11 +48,11 @@ void delete(int k, HANGER *T, int m)       //k kulcsu elemet keres
     {
         j=(k+i) % m;
         if (T[j].phone_number==k)
-        { T[j].phone_number=-1;strcpy(T[j].name,""); break; } // visszaadja a megtalalt elem indexet
+        { T[j].phone_number=-1;strcpy(T[j].name,""); return; } // visszaadja a megtalalt elem indexet
         else i++;
     }
     while ((T[j].phone_number!=-1) && (i!=m));
-    //if (i!=m) printf("hianyzo elem");
+    if (i!=m) printf("hianyzo elem");
       // ha nincs benne a keresett elem
 }
 
